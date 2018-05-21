@@ -25,7 +25,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import app.bolling.chucknorris.util.DataRepository
+import app.bolling.chucknorris.util.ListingsRepository
 import app.bolling.chucknorris.util.ResourceUtil
 import com.xevenition.HomeApp
 import com.xevenition.R
@@ -38,7 +38,7 @@ class MapFragment : Fragment() {
     @Inject
     lateinit var resources: ResourceUtil
     @Inject
-    lateinit var repository: DataRepository
+    lateinit var repository: ListingsRepository
     @Inject
     lateinit var application: Application
 

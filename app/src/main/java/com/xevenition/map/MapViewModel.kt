@@ -20,14 +20,14 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
 import android.view.View
-import app.bolling.chucknorris.util.DataRepository
+import app.bolling.chucknorris.util.ListingsRepository
 import app.bolling.chucknorris.util.ResourceUtil
 import app.bolling.chucknorris.util.SingleLiveEvent
 import io.reactivex.android.schedulers.AndroidSchedulers
 
 
 
-class MapViewModel(private val resourceUtil: ResourceUtil, private val repository: DataRepository, application: Application) : AndroidViewModel(application) {
+class MapViewModel(private val resourceUtil: ResourceUtil, private val repository: ListingsRepository, application: Application) : AndroidViewModel(application) {
 
 
 
@@ -42,7 +42,7 @@ class MapViewModel(private val resourceUtil: ResourceUtil, private val repositor
     fun onNextJokeClicked() {
         loadingVisibilityEvent.value = View.VISIBLE
         buttonVisibilityEvent.value = View.GONE
-        repository.loadNewJoke()
+        repository.loadNewListings()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     viewedJoke = it

@@ -37,6 +37,6 @@ class ApplicationModule(private val app: Application) {
     }
 
     companion object {
-        private val END_POINT = "https://api.chucknorris.io"
+        private val END_POINT = "https://api.booli.se"
     }
 }
