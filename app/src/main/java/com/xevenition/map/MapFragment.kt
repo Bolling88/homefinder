@@ -25,11 +25,15 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import app.bolling.chucknorris.util.ListingsRepository
+import app.bolling.chucknorris.util.HomeRepository
 import app.bolling.chucknorris.util.ResourceUtil
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.maps.android.clustering.ClusterManager
 import com.xevenition.HomeApp
 import com.xevenition.R
 import com.xevenition.databinding.FragmentMapBinding
+import com.xevenition.util.SaveUtil
+import com.xevenition.util.TypedValueUtil
 import javax.inject.Inject
 
 class MapFragment : Fragment() {
@@ -38,9 +42,15 @@ class MapFragment : Fragment() {
     @Inject
     lateinit var resources: ResourceUtil
     @Inject
-    lateinit var repository: ListingsRepository
+    lateinit var repository: HomeRepository
     @Inject
     lateinit var application: Application
+    @Inject
+    lateinit var typedValueUtil: TypedValueUtil
+    @Inject
+    lateinit var saveUtil: SaveUtil
+
+    private lateinit var viewModel: MapViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,12 +66,15 @@ class MapFragment : Fragment() {
         return mBinding.root
     }
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         activity?.title = resources.getString(R.string.app_name)
 
-        val viewModel = ViewModelProviders.of(this, MapViewModelFactory(resources, repository, application)).get(MapViewModel::class.java)
+        viewModel = ViewModelProviders.of(this, MapViewModelFactory(resources, repository, saveUtil, typedValueUtil, application)).get(MapViewModel::class.java)
+
+        val mapFragment = childFragmentManager
+                .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync { viewModel.onMapReady(it, ClusterManager(context, it)) }
 
         //now we can hook up the observables to the view viewModel
         setUpObservables(viewModel)

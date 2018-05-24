@@ -2,10 +2,12 @@ package com.xevenition.database.model.db
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
+import com.google.android.gms.maps.model.LatLng
+import com.xevenition.database.model.Home
 import com.xevenition.database.model.gson.GsonListing
 
 @Entity(tableName = "listings")
-class Listing {
+class Listing: Home() {
 
     companion object Mapper{
          fun create(gson: GsonListing) : Listing{
@@ -36,24 +38,49 @@ class Listing {
     }
 
     @PrimaryKey
-    var booliId: Int = 0
-    var listPrice: Int = 0
-    var published: String? = null
-    var objectType: String? = null
-    var rooms: Int = 0
-    var livingArea: Double = 0.toDouble()
-    var additionalArea: Int = 0
-    var rent: Int = 0
-    var floor: Int = 0
-    var constructionYear: Int = 0
-    var url: String? = null
-    var plotArea: Int = 0
-    var streetAddress: String? = null
-    var countyName: String? = null
-    var municipalityName: String? = null
-    var longitude: Double = 0.toDouble()
-    var latitude: Double = 0.toDouble()
-    var sourceType: String? = null
-    var sourceName: String? = null
-    var sourceUrl: String? = null
+    override var booliId: Int = 0
+    override var listPrice: Int = 0
+    override var published: String = ""
+    override var objectType: String  = ""
+    override var rooms: Int = 0
+    override var livingArea: Int = 0
+    override var additionalArea: Int = 0
+    override var rent: Int = 0
+    override var floor: Int = 0
+    override var constructionYear: Int = 0
+    override var url: String = ""
+    override var plotArea: Int = 0
+    override var streetAddress: String = ""
+    override var countyName: String = ""
+    override var municipalityName: String = ""
+    override var longitude: Double = 0.toDouble()
+    override var latitude: Double = 0.toDouble()
+    override var sourceType: String = ""
+    override var sourceName: String = ""
+    override var sourceUrl: String = ""
+
+    override var soldDate: String
+        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+        set(value) {}
+    override var soldPrice: Int
+        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+        set(value) {}
+    override var apartmentNumber: String
+        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+        set(value) {}
+    override var soldPriceSource: String
+        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+        set(value) {}
+
+    override fun getSnippet(): String {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun getTitle(): String {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun getPosition(): LatLng {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }

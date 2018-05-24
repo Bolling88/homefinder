@@ -5,14 +5,11 @@ import android.graphics.drawable.Drawable
 import android.support.graphics.drawable.VectorDrawableCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.content.res.AppCompatResources
-
 import javax.inject.Inject
-import javax.inject.Singleton
 
 /**
  * Created by Bolling on 18/10/16.
  */
-@Singleton
 class ResourceUtil @Inject
 constructor(private val app: Application) {
 

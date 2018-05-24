@@ -1,9 +1,225 @@
 <resources>
-    <string name="app_name">Hitta Bostad</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="app_name">Find Home Sweden</string>
+    <string name="bostader">homes</string>
+
+    <bool name="isTablet">false</bool>
+
+    <string name="hitta_bostad_banner_large" translatable="false">ca-app-pub-5287847424239288/1908651859</string>
+    <string name="hitta_bostad_banner" translatable="false">ca-app-pub-5287847424239288/8486879056</string>
+
+    <string name="hitta_mapmode">Map Mode</string>
+    <string name="hitta_mapinfo">Map Info</string>
+    <string name="hitta_satellite">Satellite</string>
+    <string name="hitta_normal">Normal</string>
+    <string name="hitta_terrain">Terrain</string>
+    <string name="hitta_hybrid">Hybrid</string>
+    <string name="hitta_price">Price</string>
+    <string name="hitta_pricesquare">Price/m²</string>
+    <string name="hitta_rent">Rent</string>
+    <string name="hitta_room">Room</string>
+    <string name="hitta_livingarea">Living area</string>
+    <string name="hitta_constructio_year">Construction year</string>
+    <string name="hitta_broker">Broker</string>
+    <string name="hitta_floor">Floor</string>
+    <string name="hitta_overview">Overview</string>
+    <string name="hitta_pictures">Pictures</string>
+    <string name="hitta_day">Day</string>
+    <string name="hitta_days">Days</string>
+    <string name="hitta_details">Details</string>
+    <string name="hitta_property_type">Property type</string>
+    <string name="hitta_number_rooms">Rooms</string>
+    <string name="hitta_additional_area">Additional area</string>
+    <string name="hitta_plot">Plot</string>
+    <string name="hitta_square_meter_price">Price/m²</string>
+    <string name="hitta_information">Information provided by Booli</string>
+    <string name="hitta_visit_booli">VISIT BOOLI</string>
+    <string name="hitta_visit">VISIT</string>
+    <string name="hitta_streetview">StreetView</string>
+    <string name="hitta_where_live">Where do you want to live?</string>
+    <string name="hitta_what_cost">What may it cost?</string>
+    <string name="hitta_how_live">How do you want to live?</string>
+    <string name="hitta_street_search">Street, county or municipality</string>
+    <string name="hitta_reset">Reset</string>
+    <string name="hitta_search">Search</string>
+    <string name="hitta_searching">Searching</string>
+    <string name="hitta_close">Close</string>
+    <string name="hitta_show_more">Show more</string>
+    <string name="hitta_no_found">No Homes Found!</string>
+    <string name="hitta_price_line">Price</string>
+    <string name="hitta_rent_line">Rent</string>
+    <string name="hitta_square_line">Price/m²</string>
+    <string name="hitta_room_line">Rooms</string>
+    <string name="hitta_living_area_line">Livingarea</string>
+    <string name="hitta_show_all">Show all</string>
+    <string name="hitta_loading">Loading</string>
+    <string name="hitta_this">This</string>
+    <string name="hitta_avrage">Average</string>
+    <string name="hitta_unspecified">Unspecified</string>
+    <string name="hitta_month">kr/month</string>
+    <string name="hitta_max">Max</string>
+    <string name="hitta_least">Least</string>
+    <string name="hitta_between">Between</string>
+    <string name="hitta_and">and</string>
+    <string name="hitta_toast_search">You must enter where you want to live!</string>
+    <string name="hitta_love">Love</string>
+    <string name="hitta_no_position">Unable to find your position!</string>
+    <string name="title_activity_entity_linker" translatable="false">EntityLinkerActivity</string>
+    <string name="hello_world" translatable="false">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="hitta_seller">Seller</string>
+    <string name="hitta_street_view">STREET VIEW</string>
+    <string name="hitta_pin_pinterest">Pin on Pinterest</string>
+    <string name="hitta_isliked">Remove from Likes</string>
+    <string name="hitta_isnotliked">Add to Likes</string>
+    <string name="hitta_likes">Likes</string>
+    <string name="hitta_no_likes">No Likes?</string>
+    <string name="hitta_page1_title">Home Finder</string>
+    <string name="hitta_page1_text">Find homes for sale in Sweden.\n\n</string>
+    <string name="hitta_page2_title">Be Social</string>
+    <string name="hitta_page2_text">Sign in to share, like or comment on your favourite homes.\n</string>
+    <string name="hitta_page3_title">Easy Seek</string>
+    <string name="hitta_page3_text">Move around the map or do a text search to quickly find your dream home.</string>
+    <string name="hitta_page4_title">No Boundaries</string>
+    <string name="hitta_page4_text">Home Finder will never stop growing, we listen to feedback.\n</string>
+    <string name="hitta_intro">Introduction</string>
+    <string name="hitta_home_plural">Homes</string>
+    <string name="hitta_distance_ocean">Distance ocean</string>
+    <string name="hitta_sold_for">Sold for</string>
+    <string name="hitta_sold_diff">Difference:</string>
+    <string name="hitta_show">What to Show</string>
+    <string name="hitta_forsale">For Sale</string>
+    <string name="hitta_sold">Sold</string>
+    <string name="hitta_sold_or_forsale">For Sale or Sold?</string>
+    <string name="hitta_images">View image gallery</string>
+    <string name="hitta_images_browser">View web images</string>
+    <string name="hitta_images_loading">Loading images...</string>
+    <string name="hitta_expand_web">View images in browser</string>
+    <string name="hitta_expand_gallery">View gallery in fullscreen</string>
+    <string name="hitta_no_gallery">No image gallery</string>
+    <string name="hitta_area">Area</string>
+    <string name="hitta_filter_applied">Filter applied!</string>
+    <string name="hitta_filter_reset">Filter set to default</string>
+    <string name="hitta_not_found">Area not found!</string>
+    <string name="hitta_constructed">Constructed</string>
+    <string name="hitta_days_booli">Days on Booli</string>
+    <string name="hitta_social_level">Social Rank</string>
+    <string name="hitta_views">Views</string>
+    <string name="hitta_shares">Shares</string>
+    <string name="hitta_comments">Comments</string>
+    <string name="hitta_likes_stats">Likes</string>
+    <string name="hitta_not_found_home">Did not find the Home!</string>
+    <string name="hitta_commented">Commented </string>
+    <string name="hitta_shared_with">Shared with </string>
+    <string name="hitta_rank_introvert">Introvert</string>
+    <string name="hitta_rank_withdrawn">Withdrawn</string>
+    <string name="hitta_rank_shy">Shy</string>
+    <string name="hitta_rank_outreach">Outreach</string>
+    <string name="hitta_rank_talkative">Talkative</string>
+    <string name="hitta_rank_social">Super Social</string>
+    <string name="hitta_rank_renowned">Renowned</string>
+    <string name="hitta_rank_master">Master</string>
+    <string name="hitta_rank_points">Points To Next Rank</string>
+    <string name="hitta_profile">Profile</string>
+    <string name="title_activity_sign_in" translatable="false">SignInActivity</string>
+    <string name="hitta_or">Or Sign Up Using...</string>
+    <string name="hitta_firstname">First name</string>
+    <string name="hitta_lastname">Last name</string>
+    <string name="hitta_sign_in">Sign In</string>
+    <string name="hitta_sing_in_failed">Sign in failed!</string>
+    <string name="hitta_sing_in_successful">Signed in!</string>
+    <string name="hitta_sign_in_fail">Both first name and last name are required!</string>
+    <string name="hitta_edit">Edit</string>
+    <string name="hitta_likes_desc">The homes you liked</string>
+    <string name="hitta_share_app">Share Home Finder</string>
+    <string name="hitta_share_desc">Sharing is caring</string>
+    <string name="hitta_profile_desc">See what you have been up to</string>
+    <string name="hitta_intro_desc">See what you can do</string>
+    <string name="hitta_signin_desc">Unlock all functionality</string>
+    <string name="hitta_feedback">Feedback &amp; Support</string>
+    <string name="hitta_feedback_desc">We want to hear it all</string>
+    <string name="hitta_homes">Homes</string>
+    <string name="title_activity_main" translatable="false">MainActivity</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="hitta_view">View</string>
+    <string name="hitta_filter">Filter</string>
+    <string name="hitta_commercial">Finding homes in Sweden</string>
+    <string name="title_activity_details" translatable="false">DetailsActivity</string>
+
+    <string name="hitta_gallery">GALLERY</string>
+    <string name="hitta_web_images">WEB IMAGES</string>
+    <string name="hitta_web_info">WEB INFO</string>
+    <string name="hitta_visit_broker">Visit Broker</string>
+    <string name="hitta_street_address">Street address</string>
+    <string name="hitta_share">Share</string>
+    <string name="hitta_rate">Rate</string>
+    <string name="hitta_facebook" translatable="false">Facebook</string>
+    <string name="fastighetsbyran" translatable="false">fastighetsbyrån</string>
+    <string name="privatmaklaren" translatable="false">privatmäklaren</string>
+    <string name="hans" translatable="false">hans göthe</string>
+    <string name="recomennd">\nLet me recommend you this application\n\n</string>
+    <string name="choose_one">choose one</string>
+    <string name="hitta_contact">Contact us</string>
+    <string name="hitta_kr" translatable="false">kr</string>
+    <string name="hitta_size">Size</string>
+    <string name="hitta_m2" translatable="false">m²</string>
+    <string name="hitta_square_meter_price_long">Square meter price</string>
+    <string name="hitta_krm" translatable="false">kr/m²</string>
+    <string name="hitta_rooms">Rooms</string>
+    <string name="hitta_plot_area">Plot Area</string>
+    <string name="hitta_construction_year">Construction year</string>
+    <string name="hitta_price_filters">Price Filters</string>
+    <string name="hitta_area_filter">Area/Size filter</string>
+    <string name="hitta_size_filter">Size Filters</string>
+    <string name="hitta_other_filter">Other Filters</string>
+    <string name="hitta_monthly_payment">Monthly Payment</string>
+    <string name="hitta_apartments">Apartments</string>
+    <string name="hitta_show_apartments">Show Apartments</string>
+    <string name="hitta_show_villas">Show Villas</string>
+    <string name="hitta_show_detatched">Detached House</string>
+    <string name="hitta_show_holliday">Show holiday cottages</string>
+    <string name="hitta_show_farms">Show Farms</string>
+    <string name="hitta_show_plot">Show Plots</string>
+    <string name="hitta_days_on_booli">Days on Booli</string>
+    <string name="hitta_distance_to_water">Distance to water</string>
+    <string name="hitta_m" translatable="false">m</string>
+    <string name="hitta_villa">Villa</string>
+    <string name="hitta_home_types">Home types</string>
+    <string name="hitta_semi">Semi-detached</string>
+    <string name="hitta_row_house">Row house</string>
+    <string name="hitta_terraced">Terraced house</string>
+    <string name="hitta_cottage">Cottage</string>
+    <string name="hitta_farm">Farm</string>
+    <string name="hitta_plot_short">Plot</string>
+    <string name="hitta_semi_detatched">Semi-detatched house</string>
+    <string name="lagenhet" translatable="false">lägenhet</string>
+    <string name="villa" translatable="false">villa</string>
+    <string name="parhus" translatable="false">parhus</string>
+    <string name="radhus" translatable="false">radhus</string>
+    <string name="kedjehus" translatable="false">kedjehus</string>
+    <string name="fritidshus" translatable="false">fritidshus</string>
+    <string name="gard" translatable="false">gård</string>
+    <string name="tomtmark" translatable="false">tomt/mark</string>
+    <string name="send_email">Send email...</string>
+    <string name="email_body">Body</string>
+    <string name="subject">Subject</string>
+    <string name="personal_email" translatable="false">bolling.ludwig@gmail.com</string>
+    <string name="clear_filter">Clear Filter</string>
+    <string name="base_setting_1" translatable="false">0 kr - ∞ kr</string>
+    <string name="base_setting_2" translatable="false">0 m² - ∞ m²</string>
+    <string name="base_setting_3" translatable="false">0 kr/m² - ∞ kr/m²</string>
+    <string name="base_setting_4" translatable="false">0 m² - ∞ m²</string>
+    <string name="base_setting_5" translatable="false">0 - ∞</string>
+    <string name="base_setting_6" translatable="false">∞ kr</string>
+    <string name="base_setting_7" translatable="false">∞</string>
+    <string name="base_setting_8" translatable="false">∞ m</string>
+    <string name="hitta_apartment">Apartment</string>
+    <string name="hitta_detached">Detached</string>
+    <string name="hitta_semidetached">Parhus</string>
+    <string name="hitta_other">Other</string>
+    <string name="hitta_images_short">Images</string>
+    <string name="on_booli">On Booli</string>
+    <string name="for_sale">For Sale</string>
+    <string name="sold">Sold</string>
 </resources>

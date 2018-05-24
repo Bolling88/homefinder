@@ -29,7 +29,7 @@ public class GsonListing {
     private int rooms;
     @SerializedName("livingArea")
     @Expose
-    private double livingArea;
+    private int livingArea;
     @SerializedName("additionalArea")
     @Expose
     private int additionalArea;
@@ -105,11 +105,11 @@ public class GsonListing {
         this.rooms = rooms;
     }
 
-    public double getLivingArea() {
+    public int getLivingArea() {
         return livingArea;
     }
 
-    public void setLivingArea(double livingArea) {
+    public void setLivingArea(int livingArea) {
         this.livingArea = livingArea;
     }
 

@@ -5,6 +5,33 @@ import com.xevenition.HomeApp
 import com.xevenition.R
 import com.xevenition.database.model.db.Listing
 import com.xevenition.database.model.gson.GsonListingInfo
+import com.xevenition.util.SaveUtil
+import com.xevenition.util.SaveUtil.Companion.PARAM_ACTIVE_DAYS
+import com.xevenition.util.SaveUtil.Companion.PARAM_DISTANCE_SEA
+import com.xevenition.util.SaveUtil.Companion.PARAM_MAX_AREA
+import com.xevenition.util.SaveUtil.Companion.PARAM_MAX_CONSTRUCTION
+import com.xevenition.util.SaveUtil.Companion.PARAM_MAX_PLOT
+import com.xevenition.util.SaveUtil.Companion.PARAM_MAX_PRICE
+import com.xevenition.util.SaveUtil.Companion.PARAM_MAX_SQUAREPRICE
+import com.xevenition.util.SaveUtil.Companion.PARAM_MIN_AREA
+import com.xevenition.util.SaveUtil.Companion.PARAM_MIN_CONSTRUCTION
+import com.xevenition.util.SaveUtil.Companion.PARAM_MIN_PLOT
+import com.xevenition.util.SaveUtil.Companion.PARAM_MIN_PRICE
+import com.xevenition.util.SaveUtil.Companion.PARAM_MIN_SQUAREPRICE
+import com.xevenition.util.SaveUtil.Companion.PARAM_RENT
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_APARTMENT
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_FARM
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_HOLLIDAY
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_PLOT
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_ROOM_1
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_ROOM_2
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_ROOM_3
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_ROOM_4
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_ROOM_5
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_ROW
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_SEMI
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_TERRACED
+import com.xevenition.util.SaveUtil.Companion.PARAM_SHOW_VILLA
 import io.reactivex.Flowable
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit
@@ -21,11 +48,10 @@ import kotlin.experimental.and
 /**
  * Repository handling the work with products and comments.
  */
-const val TAG = "ListingsRepository"
+const val TAG = "HomeRepository"
 const val CALLER_ID = "hitta_bostad"
 
-class ListingsRepository @Inject
-constructor(private val mDatabase: AppDatabase, private val retrofit: Retrofit, private val resources: ResourceUtil) {
+class HomeRepository @Inject constructor(private val mDatabase: AppDatabase, private val retrofit: Retrofit, private val resources: ResourceUtil, private val saveUtil: SaveUtil) {
 
     val listings: Flowable<List<Listing>>
         get() = mDatabase.listingsDao().getAllListings()
@@ -44,14 +70,14 @@ constructor(private val mDatabase: AppDatabase, private val retrofit: Retrofit, 
         val unique = getUniqueNumber()
         val timestamp = (System.currentTimeMillis() / 1000L).toString() + ""
         var hash = getSha1(CALLER_ID + timestamp + resources.getString(R.string.booli_key) + unique)
-        
+
         return service.getTasks(hash = hash, callerId = CALLER_ID, latLon = "", limit = 500, offset = 0, timestamp = timestamp, unique = unique, widthHeight = "200")
                 .flatMap { Flowable.fromIterable(it.listings) }
                 .map { Listing.create(it) }
                 .subscribeOn(Schedulers.io())
     }
 
-    //    fun deleteJoke(viewedJoke: ListingsRepository) {
+    //    fun deleteJoke(viewedJoke: HomeRepository) {
 //        Observable.just(viewedJoke)
 //                .subscribeOn(Schedulers.io())
 //                .doOnNext { joke -> mDatabase.listingsDao().deleteJoke(joke) }
@@ -70,6 +96,38 @@ constructor(private val mDatabase: AppDatabase, private val retrofit: Retrofit, 
 //                .doOnNext { mDatabase.listingsDao().insert(it) }
 //                .subscribe()
 //    }
+
+    fun setUpFilter() {
+        val minPrice = saveUtil.getInt(PARAM_MIN_PRICE)
+        val maxPrice = saveUtil.getInt(PARAM_MAX_PRICE)
+        val minArea = saveUtil.getInt(PARAM_MIN_AREA)
+        val maxArea = saveUtil.getInt(PARAM_MAX_AREA)
+        val minSqr = saveUtil.getInt(PARAM_MIN_SQUAREPRICE)
+        val maxSqr = saveUtil.getInt(PARAM_MAX_SQUAREPRICE)
+        val minPlot = saveUtil.getInt(PARAM_MIN_PLOT)
+        val maxPlot = saveUtil.getInt(PARAM_MAX_PLOT)
+        val minConstruct = saveUtil.getInt(PARAM_MIN_CONSTRUCTION)
+        val maxConstruct = saveUtil.getInt(PARAM_MAX_CONSTRUCTION)
+        val rent = saveUtil.getInt(PARAM_RENT)
+        val distanceSea = saveUtil.getInt(PARAM_DISTANCE_SEA)
+        val daysActive = saveUtil.getInt(PARAM_ACTIVE_DAYS)
+
+        val showApartments = saveUtil.getBoolean(PARAM_SHOW_APARTMENT, true)
+        val showVillas = saveUtil.getBoolean(PARAM_SHOW_VILLA, true)
+        val showDetatched = saveUtil.getBoolean(PARAM_SHOW_TERRACED, true)
+        val showCottage = saveUtil.getBoolean(PARAM_SHOW_HOLLIDAY, true)
+        val showPlot = saveUtil.getBoolean(PARAM_SHOW_PLOT, true)
+        val showFarms = saveUtil.getBoolean(PARAM_SHOW_FARM, true)
+        val showSemi = saveUtil.getBoolean(PARAM_SHOW_SEMI, true)
+        val showRow = saveUtil.getBoolean(PARAM_SHOW_ROW, true)
+
+        val rooms1 = saveUtil.getBoolean(PARAM_SHOW_ROOM_1, true)
+        val rooms2 = saveUtil.getBoolean(PARAM_SHOW_ROOM_2, true)
+        val rooms3 = saveUtil.getBoolean(PARAM_SHOW_ROOM_3, true)
+        val rooms4 = saveUtil.getBoolean(PARAM_SHOW_ROOM_4, true)
+        val rooms5 = saveUtil.getBoolean(PARAM_SHOW_ROOM_5, true)
+    }
+
 
     //    @GET("/listings/?center={latitude},{longitude}&dim={window_width},{window_height}&limit={limit}offset=0&callerId={caller_id}&time={timestamp}&unique={unique}&hash={hash}")
     private interface BooliApi {

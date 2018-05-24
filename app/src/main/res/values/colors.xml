@@ -3,4 +3,39 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="hitta_blue">#3498db</color>
+    <color name="hitta_blue_transparent">#403498db</color>
+    <color name="hitta_blue_light">#4dbeff</color>
+    <color name="hitta_blue_dark">#2c80b8</color>
+    <color name="hitta_grey">#bdc3c7</color>
+    <color name="hitta_grey_light">#cccccc</color>
+
+    <color name="hitta_red">#ff5a5f</color>
+    <color name="hitta_red_dark">#c4464a</color>
+
+    <color name="hitta_green">#27ae60</color>
+    <color name="hitta_green_dark">#1e894b</color>
+    <color name="hitta_green_light">#2ecc71</color>
+    <color name="hitta_turqouise">#1abc9c</color>
+    <color name="hitta_turqouise_dark">#117c67</color>
+    <color name="hitta_asphalt">#34495e</color>
+    <color name="hitta_midnight_blue">#213242</color>
+    <color name="apptheme_color">#189df5</color>
+    <color name="hitta_light_blue">#c9e9ff</color>
+    <color name="hitta_white">#ffffff</color>
+    <color name="hitta_dark_red">#c0392b</color>
+    <color name="hitta_orange">#f39c12</color>
+    <color name="hitta_yellow">#f1c40f</color>
+    <color name="hitta_yellow_dark">#b79409</color>
+    <color name="hitta_purple">#8e44ad</color>
+    <color name="hitta_purple_dark">#703489</color>
+    <color name="hitta_transparent">#00000000</color>
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow_1">#d4d4d4</color>
+    <color name="card_shadow_2">#dddddd</color>
+    <color name="card_detailing">#eee</color>
+    <color name="hitta_background">#e5e7ea</color>
+    <color name="hitta_black">#000000</color>
+    <color name="hitta_brown">#895e1d</color>
+    <color name="hitta_brown_dark">#664514</color>
 </resources>
