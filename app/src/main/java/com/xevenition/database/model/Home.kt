@@ -6,6 +6,18 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 abstract class Home : ClusterItem {
+
+    companion object {
+        val LAGENEHET = "lagenhet"
+        val VILLA = "villa"
+        val FRITIDSHUS = "fritidshus"
+        val KEDJEHUS = "kedjehus"
+        val PARHUS = "parhus"
+        val RADHUS = "radhus"
+        val TOMT = "tomt/mark"
+        val GARD = "gård"
+    }
+
     abstract var booliId: Int
     abstract var listPrice: Int
     abstract var rent: Int

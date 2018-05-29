@@ -43,15 +43,6 @@ class MyClusterRenderer constructor(val app: Application, val resources: Resourc
     private val blueMarker: Drawable?
     private val iconGenerator: IconGenerator
     private val clusterIconGenerator: IconGenerator
-    private val LAGENEHET: String
-    private val TOMT: String
-    private val VILLA: String
-    private val RADHUS: String
-    private val FRITIDSHUS: String
-    private val KEDJEHUS: String
-    private val PARHUS: String
-    private val GARD: String
-
     private val apartment: String
     private val villa: String
     private val cottage: String
@@ -99,14 +90,6 @@ class MyClusterRenderer constructor(val app: Application, val resources: Resourc
         blackMarker = resources.getDrawable( R.drawable.marker_black)
 
         mClusterManager = clusterManager
-        LAGENEHET = resources.getString(R.string.lagenhet)
-        VILLA = resources.getString(R.string.villa)
-        FRITIDSHUS = resources.getString(R.string.fritidshus)
-        KEDJEHUS = resources.getString(R.string.kedjehus)
-        PARHUS = resources.getString(R.string.parhus)
-        RADHUS = resources.getString(R.string.radhus)
-        TOMT = resources.getString(R.string.tomtmark)
-        GARD = resources.getString(R.string.gard)
 
         apartment = resources.getString(R.string.hitta_apartment)
         villa = resources.getString(R.string.hitta_villa)
@@ -126,28 +109,28 @@ class MyClusterRenderer constructor(val app: Application, val resources: Resourc
         var descriptor: BitmapDescriptor? = this.singleIcons?.get(booliId)
         if (descriptor == null) {
             val objectType = home.objectType
-            if (objectType.equals(LAGENEHET, ignoreCase = true)) {
+            if (objectType.equals(Home.LAGENEHET, ignoreCase = true)) {
                 mapMarker.background = blueMarker
                 textType.text = apartment
-            } else if (objectType.equals(TOMT, ignoreCase = true)) {
+            } else if (objectType.equals(Home.TOMT, ignoreCase = true)) {
                 mapMarker.background = greenMarker
                 textType.text = plot
-            } else if (objectType.equals(VILLA, ignoreCase = true)) {
+            } else if (objectType.equals(Home.VILLA, ignoreCase = true)) {
                 mapMarker.background = redMarker
                 textType.text = villa
-            } else if (objectType.equals(RADHUS, ignoreCase = true)) {
+            } else if (objectType.equals(Home.RADHUS, ignoreCase = true)) {
                 mapMarker.background = redMarker
                 textType.text = terraced
-            } else if (objectType.equals(FRITIDSHUS, ignoreCase = true)) {
+            } else if (objectType.equals(Home.FRITIDSHUS, ignoreCase = true)) {
                 mapMarker.background = brownMarker
                 textType.text = cottage
-            } else if (objectType.equals(KEDJEHUS, ignoreCase = true)) {
+            } else if (objectType.equals(Home.KEDJEHUS, ignoreCase = true)) {
                 mapMarker.background = purpleMarker
                 textType.text = detached
-            } else if (objectType.equals(PARHUS, ignoreCase = true)) {
+            } else if (objectType.equals(Home.PARHUS, ignoreCase = true)) {
                 mapMarker.background = yellowMarker
                 textType.text = semidetached
-            } else if (objectType.equals(GARD, ignoreCase = true)) {
+            } else if (objectType.equals(Home.GARD, ignoreCase = true)) {
                 mapMarker.background = cyanMarker
                 textType.text = farm
             } else {

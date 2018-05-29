@@ -193,14 +193,6 @@
     <string name="hitta_farm">Farm</string>
     <string name="hitta_plot_short">Plot</string>
     <string name="hitta_semi_detatched">Semi-detatched house</string>
-    <string name="lagenhet" translatable="false">lägenhet</string>
-    <string name="villa" translatable="false">villa</string>
-    <string name="parhus" translatable="false">parhus</string>
-    <string name="radhus" translatable="false">radhus</string>
-    <string name="kedjehus" translatable="false">kedjehus</string>
-    <string name="fritidshus" translatable="false">fritidshus</string>
-    <string name="gard" translatable="false">gård</string>
-    <string name="tomtmark" translatable="false">tomt/mark</string>
     <string name="send_email">Send email...</string>
     <string name="email_body">Body</string>
     <string name="subject">Subject</string>
