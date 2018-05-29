@@ -214,4 +214,5 @@
     <string name="on_booli">On Booli</string>
     <string name="for_sale">For Sale</string>
     <string name="sold">Sold</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
